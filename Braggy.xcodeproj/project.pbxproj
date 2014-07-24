@@ -15,14 +15,16 @@
 		E79B9C7D1981969700CA0419 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9C7C1981969700CA0419 /* AppDelegate.m */; };
 		E79B9C801981969700CA0419 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79B9C7E1981969700CA0419 /* Main_iPhone.storyboard */; };
 		E79B9C831981969700CA0419 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E79B9C811981969700CA0419 /* Main_iPad.storyboard */; };
-		E79B9C861981969700CA0419 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9C851981969700CA0419 /* FirstViewController.m */; };
-		E79B9C891981969700CA0419 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9C881981969700CA0419 /* SecondViewController.m */; };
 		E79B9C8B1981969700CA0419 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E79B9C8A1981969700CA0419 /* Images.xcassets */; };
 		E79B9C921981969700CA0419 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79B9C911981969700CA0419 /* XCTest.framework */; };
 		E79B9C931981969700CA0419 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79B9C6C1981969700CA0419 /* Foundation.framework */; };
 		E79B9C941981969700CA0419 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79B9C701981969700CA0419 /* UIKit.framework */; };
 		E79B9C9C1981969700CA0419 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E79B9C9A1981969700CA0419 /* InfoPlist.strings */; };
 		E79B9C9E1981969700CA0419 /* BraggyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9C9D1981969700CA0419 /* BraggyTests.m */; };
+		E79B9CAA198197FD00CA0419 /* RecentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CA9198197FD00CA0419 /* RecentsViewController.m */; };
+		E79B9CAD1981981300CA0419 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CAC1981981300CA0419 /* FavoritesViewController.m */; };
+		E79B9CB01981986300CA0419 /* FeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CAF1981986300CA0419 /* FeaturedViewController.m */; };
+		E79B9CB3198199CD00CA0419 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CB2198199CD00CA0419 /* PhotosViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,16 +50,20 @@
 		E79B9C7C1981969700CA0419 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E79B9C7F1981969700CA0419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		E79B9C821981969700CA0419 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		E79B9C841981969700CA0419 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		E79B9C851981969700CA0419 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		E79B9C871981969700CA0419 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		E79B9C881981969700CA0419 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		E79B9C8A1981969700CA0419 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E79B9C901981969700CA0419 /* BraggyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BraggyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E79B9C911981969700CA0419 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E79B9C991981969700CA0419 /* BraggyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BraggyTests-Info.plist"; sourceTree = "<group>"; };
 		E79B9C9B1981969700CA0419 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E79B9C9D1981969700CA0419 /* BraggyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BraggyTests.m; sourceTree = "<group>"; };
+		E79B9CA8198197FD00CA0419 /* RecentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecentsViewController.h; path = TabViews/RecentsViewController.h; sourceTree = "<group>"; };
+		E79B9CA9198197FD00CA0419 /* RecentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecentsViewController.m; path = TabViews/RecentsViewController.m; sourceTree = "<group>"; };
+		E79B9CAB1981981300CA0419 /* FavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FavoritesViewController.h; path = TabViews/FavoritesViewController.h; sourceTree = "<group>"; };
+		E79B9CAC1981981300CA0419 /* FavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FavoritesViewController.m; path = TabViews/FavoritesViewController.m; sourceTree = "<group>"; };
+		E79B9CAE1981986300CA0419 /* FeaturedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FeaturedViewController.h; path = TabViews/FeaturedViewController.h; sourceTree = "<group>"; };
+		E79B9CAF1981986300CA0419 /* FeaturedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeaturedViewController.m; path = TabViews/FeaturedViewController.m; sourceTree = "<group>"; };
+		E79B9CB1198199CD00CA0419 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotosViewController.h; path = TabViews/PhotosViewController.h; sourceTree = "<group>"; };
+		E79B9CB2198199CD00CA0419 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotosViewController.m; path = TabViews/PhotosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,14 +123,11 @@
 		E79B9C721981969700CA0419 /* Braggy */ = {
 			isa = PBXGroup;
 			children = (
+				E79B9CA7198197AB00CA0419 /* TabViews */,
 				E79B9C7B1981969700CA0419 /* AppDelegate.h */,
 				E79B9C7C1981969700CA0419 /* AppDelegate.m */,
 				E79B9C7E1981969700CA0419 /* Main_iPhone.storyboard */,
 				E79B9C811981969700CA0419 /* Main_iPad.storyboard */,
-				E79B9C841981969700CA0419 /* FirstViewController.h */,
-				E79B9C851981969700CA0419 /* FirstViewController.m */,
-				E79B9C871981969700CA0419 /* SecondViewController.h */,
-				E79B9C881981969700CA0419 /* SecondViewController.m */,
 				E79B9C8A1981969700CA0419 /* Images.xcassets */,
 				E79B9C731981969700CA0419 /* Supporting Files */,
 			);
@@ -158,6 +161,21 @@
 				E79B9C9A1981969700CA0419 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E79B9CA7198197AB00CA0419 /* TabViews */ = {
+			isa = PBXGroup;
+			children = (
+				E79B9CA8198197FD00CA0419 /* RecentsViewController.h */,
+				E79B9CA9198197FD00CA0419 /* RecentsViewController.m */,
+				E79B9CAB1981981300CA0419 /* FavoritesViewController.h */,
+				E79B9CAC1981981300CA0419 /* FavoritesViewController.m */,
+				E79B9CAE1981986300CA0419 /* FeaturedViewController.h */,
+				E79B9CAF1981986300CA0419 /* FeaturedViewController.m */,
+				E79B9CB1198199CD00CA0419 /* PhotosViewController.h */,
+				E79B9CB2198199CD00CA0419 /* PhotosViewController.m */,
+			);
+			name = TabViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,9 +276,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E79B9C891981969700CA0419 /* SecondViewController.m in Sources */,
+				E79B9CAA198197FD00CA0419 /* RecentsViewController.m in Sources */,
+				E79B9CAD1981981300CA0419 /* FavoritesViewController.m in Sources */,
 				E79B9C7D1981969700CA0419 /* AppDelegate.m in Sources */,
-				E79B9C861981969700CA0419 /* FirstViewController.m in Sources */,
+				E79B9CB01981986300CA0419 /* FeaturedViewController.m in Sources */,
+				E79B9CB3198199CD00CA0419 /* PhotosViewController.m in Sources */,
 				E79B9C791981969700CA0419 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  FeaturedViewController.h
 //  Braggy
 //
 //  Created by Tongbram, Robertis on 7/24/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface FeaturedViewController : UIViewController
 
 @end

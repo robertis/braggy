@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  PhotosViewController.h
 //  Braggy
 //
 //  Created by Tongbram, Robertis on 7/24/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface PhotosViewController : UIViewController
 
 @end
