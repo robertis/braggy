@@ -25,6 +25,8 @@
 		E79B9CAD1981981300CA0419 /* FavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CAC1981981300CA0419 /* FavoritesViewController.m */; };
 		E79B9CB01981986300CA0419 /* FeaturedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CAF1981986300CA0419 /* FeaturedViewController.m */; };
 		E79B9CB3198199CD00CA0419 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CB2198199CD00CA0419 /* PhotosViewController.m */; };
+		E79B9CB51981A4FE00CA0419 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79B9CB41981A4FE00CA0419 /* CoreImage.framework */; };
+		E79B9CB81981A61400CA0419 /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = E79B9CB71981A61400CA0419 /* test1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		E79B9CAF1981986300CA0419 /* FeaturedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FeaturedViewController.m; path = TabViews/FeaturedViewController.m; sourceTree = "<group>"; };
 		E79B9CB1198199CD00CA0419 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotosViewController.h; path = TabViews/PhotosViewController.h; sourceTree = "<group>"; };
 		E79B9CB2198199CD00CA0419 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotosViewController.m; path = TabViews/PhotosViewController.m; sourceTree = "<group>"; };
+		E79B9CB41981A4FE00CA0419 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		E79B9CB71981A61400CA0419 /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test1.png; path = ../../../Desktop/test1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79B9CB51981A4FE00CA0419 /* CoreImage.framework in Frameworks */,
 				E79B9C6F1981969700CA0419 /* CoreGraphics.framework in Frameworks */,
 				E79B9C711981969700CA0419 /* UIKit.framework in Frameworks */,
 				E79B9C6D1981969700CA0419 /* Foundation.framework in Frameworks */,
@@ -112,6 +117,7 @@
 		E79B9C6B1981969700CA0419 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E79B9CB41981A4FE00CA0419 /* CoreImage.framework */,
 				E79B9C6C1981969700CA0419 /* Foundation.framework */,
 				E79B9C6E1981969700CA0419 /* CoreGraphics.framework */,
 				E79B9C701981969700CA0419 /* UIKit.framework */,
@@ -123,6 +129,7 @@
 		E79B9C721981969700CA0419 /* Braggy */ = {
 			isa = PBXGroup;
 			children = (
+				E79B9CB61981A51800CA0419 /* images */,
 				E79B9CA7198197AB00CA0419 /* TabViews */,
 				E79B9C7B1981969700CA0419 /* AppDelegate.h */,
 				E79B9C7C1981969700CA0419 /* AppDelegate.m */,
@@ -176,6 +183,14 @@
 				E79B9CB2198199CD00CA0419 /* PhotosViewController.m */,
 			);
 			name = TabViews;
+			sourceTree = "<group>";
+		};
+		E79B9CB61981A51800CA0419 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E79B9CB71981A61400CA0419 /* test1.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +272,7 @@
 				E79B9C831981969700CA0419 /* Main_iPad.storyboard in Resources */,
 				E79B9C8B1981969700CA0419 /* Images.xcassets in Resources */,
 				E79B9C801981969700CA0419 /* Main_iPhone.storyboard in Resources */,
+				E79B9CB81981A61400CA0419 /* test1.png in Resources */,
 				E79B9C771981969700CA0419 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
