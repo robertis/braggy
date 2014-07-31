@@ -27,6 +27,7 @@
 		E79B9CB3198199CD00CA0419 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CB2198199CD00CA0419 /* PhotosViewController.m */; };
 		E79B9CB51981A4FE00CA0419 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79B9CB41981A4FE00CA0419 /* CoreImage.framework */; };
 		E79B9CB81981A61400CA0419 /* test1.png in Resources */ = {isa = PBXBuildFile; fileRef = E79B9CB71981A61400CA0419 /* test1.png */; };
+		E79B9CBC1988611600CA0419 /* PhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E79B9CBB1988611600CA0419 /* PhotosCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		E79B9CB2198199CD00CA0419 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotosViewController.m; path = TabViews/PhotosViewController.m; sourceTree = "<group>"; };
 		E79B9CB41981A4FE00CA0419 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		E79B9CB71981A61400CA0419 /* test1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test1.png; path = ../../../Desktop/test1.png; sourceTree = "<group>"; };
+		E79B9CBA1988611600CA0419 /* PhotosCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotosCollectionViewCell.h; path = Cells/PhotosCollectionViewCell.h; sourceTree = "<group>"; };
+		E79B9CBB1988611600CA0419 /* PhotosCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotosCollectionViewCell.m; path = Cells/PhotosCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,7 @@
 		E79B9C721981969700CA0419 /* Braggy */ = {
 			isa = PBXGroup;
 			children = (
+				E79B9CB9198860F200CA0419 /* Cells */,
 				E79B9CB61981A51800CA0419 /* images */,
 				E79B9CA7198197AB00CA0419 /* TabViews */,
 				E79B9C7B1981969700CA0419 /* AppDelegate.h */,
@@ -191,6 +195,15 @@
 				E79B9CB71981A61400CA0419 /* test1.png */,
 			);
 			name = images;
+			sourceTree = "<group>";
+		};
+		E79B9CB9198860F200CA0419 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				E79B9CBA1988611600CA0419 /* PhotosCollectionViewCell.h */,
+				E79B9CBB1988611600CA0419 /* PhotosCollectionViewCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E79B9CBC1988611600CA0419 /* PhotosCollectionViewCell.m in Sources */,
 				E79B9CAA198197FD00CA0419 /* RecentsViewController.m in Sources */,
 				E79B9CAD1981981300CA0419 /* FavoritesViewController.m in Sources */,
 				E79B9C7D1981969700CA0419 /* AppDelegate.m in Sources */,

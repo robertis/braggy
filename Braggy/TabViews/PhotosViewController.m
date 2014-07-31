@@ -19,15 +19,23 @@
 
 - (IBAction)changeShadowsAndHighlights:(id)sender;
 - (IBAction)adjustValue:(id)sender;
+
+- (IBAction)changeValue:(id)sender;
+- (IBAction)applyEffect:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @property (weak, nonatomic) IBOutlet UILabel *svalue;
 
-
+@property (strong, nonatomic) NSMutableArray *editors;
+@property (strong, nonatomic) NSMutableArray *editoryKeys;
 @end
 
 @implementation PhotosViewController
 
 BOOL toggle;
 float inputVal;
+int effectType;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,6 +50,24 @@ float inputVal;
 {
     UIImage *image = [UIImage imageNamed: @"test1.png"];
     [self.imageView setImage:image];
+    _editors = [@[@"EXPOSURE",
+                    @"WHITE BALANCE",
+                    @"HIGHLIGHTS",
+                    @"SHADOWS",
+                    @"TEMPERATURE",
+                    @"VIBRANCE",
+                    @"SATURATION",
+                    @"CLARITY",
+                    @"CONTRAST"] mutableCopy];
+    _editoryKeys = [@[@"CIExposureAdjust",
+                  @"CIWhitePointAdjust",
+                  @"CIHighlightShadowAdjust",
+                  @"CIHighlightShadowAdjust",
+                  @"CITemperatureAndTint",
+                  @"CIVibrance",
+                  @"CIColorControls",
+                  @"CIColorControls",
+                  @"CIColorControls"] mutableCopy];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -52,8 +78,44 @@ float inputVal;
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+#pragma mark UICollectionViewDataSource
 
+-(NSInteger)numberOfSectionsInCollectionView:
+(UICollectionView *)collectionView
+{
+    return 1;
+}
 
+-(NSInteger)collectionView:(UICollectionView *)collectionView
+    numberOfItemsInSection:(NSInteger)section
+{
+    return 6;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                 cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PhotosCollectionViewCell *myCell = [collectionView
+                                    dequeueReusableCellWithReuseIdentifier:@"AdjustCellId"
+                                    forIndexPath:indexPath];
+    
+    
+    myCell.imageView.image = [UIImage imageNamed: @"test1.png"];
+    myCell.title.text = _editors[indexPath.item];
+    
+    return myCell;
+}
+
+#pragma mark -
+#pragma mark UICollectionViewDelegate
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    effectType = indexPath.item;
+    NSLog(@"selected editor = %@",_editors[indexPath.item]);
+    NSLog(@"effect type = %d",effectType);
+}
 
 //#pragma mark - UIImagePickerControllerDelegate
 
@@ -161,32 +223,40 @@ float inputVal;
     NSDictionary *options = @{ kCIContextWorkingColorSpace : [NSNull null] };
     
     UIImage *selectedImage = [UIImage imageNamed: @"test1.png"];
+    NSData *selImageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation((selectedImage), 0.5)];
+    NSLog(@"SIZE OF IMAGE BEFORE : %ld ", (unsigned long)selImageData.length);
+    
     [self.imageView setImage:selectedImage];
     UIImageOrientation originalOrientation = self.imageView.image.imageOrientation;
     CIImage *rawImageData = [[CIImage alloc] initWithCGImage:[self.imageView.image CGImage]];
     NSString *photoEffect;
     if(ev < 2){
+        //--
         photoEffect = @"CIPhotoEffectChrome";
     }
     else if(ev < 3){
         photoEffect = @"CIPhotoEffectFade";
     }
     else if(ev < 4){
+        //--
         photoEffect = @"CIPhotoEffectInstant";
     }
     else if(ev < 5){
         photoEffect = @"CIPhotoEffectMono";
     }
     else if(ev < 6){
+        //--
         photoEffect = @"CIPhotoEffectNoir";
     }
     else if(ev < 7){
+        //--
         photoEffect = @"CIPhotoEffectProcess";
     }
     else if(ev < 8){
         photoEffect = @"CIPhotoEffectTonal";
     }
     else if(ev < 9){
+        //--
         photoEffect = @"CIPhotoEffectTransfer";
     }
     else{
@@ -208,6 +278,9 @@ float inputVal;
     CGImageRef imgRef = [context createCGImage:outputImage fromRect:outputImage.extent];
     UIImage* img = [[UIImage alloc] initWithCGImage:imgRef scale:1.0 orientation:originalOrientation];
     CGImageRelease(imgRef);
+    
+    NSData *imageData = [[NSData alloc] initWithData:UIImageJPEGRepresentation((img), 0.5)];
+    NSLog(@"SIZE OF IMAGE AFTER : %ld ", (unsigned long)imageData.length);
     
     [self.imageView setImage:img];
 }
@@ -328,6 +401,51 @@ float inputVal;
     float val = slider.value;
     inputVal = val;
     self.svalue.text = [NSString stringWithFormat:@"%f",val];
+}
+
+- (IBAction)changeValue:(id)sender {
+    UIStepper *stepper = (UIStepper *) sender;
+    inputVal = (float)[stepper value];
+    
+    double value = [stepper value];
+    [self.svalue setText:[NSString stringWithFormat:@"%d", (int)value]];
+}
+
+- (IBAction)applyEffect:(id)sender {
+    
+   
+    [self applyExposureWith:effectType andValue:inputVal];
+}
+
+- (void)applyExposureWith:(int)type andValue:(float)value
+{
+    NSLog(@"input value = %f",value);
+    NSLog(@"effect type = %d",type);
+    
+    float ev = inputVal;
+    NSLog(@"shadow value in float = %f", ev);
+    EAGLContext *myEAGLContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    NSDictionary *options = @{ kCIContextWorkingColorSpace : [NSNull null] };
+    
+    UIImage *selectedImage = [UIImage imageNamed: @"test1.png"];
+    [self.imageView setImage:selectedImage];
+    UIImageOrientation originalOrientation = self.imageView.image.imageOrientation;
+    CIImage *rawImageData = [[CIImage alloc] initWithCGImage:[self.imageView.image CGImage]];
+    
+    CIFilter *filter = [CIFilter filterWithName:@"CIColorPosterize"];
+    [filter setDefaults];
+    [filter setValue:rawImageData forKey:@"inputImage"];
+    [filter setValue:[NSNumber numberWithFloat:ev]
+              forKey:@"inputLevels"];
+    
+    CIImage *outputImage = [filter valueForKey:@"outputImage"];
+    
+    CIContext *context = [CIContext contextWithEAGLContext:myEAGLContext options:options];
+    CGImageRef imgRef = [context createCGImage:outputImage fromRect:outputImage.extent];
+    UIImage* img = [[UIImage alloc] initWithCGImage:imgRef scale:1.0 orientation:originalOrientation];
+    CGImageRelease(imgRef);
+    
+    [self.imageView setImage:img];
 }
 
 
